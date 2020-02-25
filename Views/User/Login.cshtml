@@ -1,0 +1,29 @@
+﻿@model signInUserModel
+
+<h4>Zaloguj się </h4>
+<form asp-controller="User" asp-action="login" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="Login"> </label>
+            <input asp-for="Login" class="form-control" />
+            <small asp-validation-for="Login" class="text-danger"></small>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="Password"> </label>
+            <input asp-for="Password" class="form-control" />
+            <small asp-validation-for="Password" class="text-danger"></small>
+        </div>
+
+    </div>
+
+    <div class="row my-2">
+        <input type="submit" value="Zapisz" class="btn btn-primary d-block mx-auto" />
+    </div>
+</form>
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+}

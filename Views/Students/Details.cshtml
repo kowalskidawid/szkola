@@ -1,0 +1,165 @@
+﻿@model StudentsModel
+
+   <h4> @Model.FirstName @Model.SecondName @Model.LastName </h4>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#personalData"> Dane osobowe </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#PlaceOfResidence"> Miejsce zamieszkania </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#domicile"> Miejsce zameldowania </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#parents"> Rodzice  </a>
+    </li>
+</ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="personalData">
+
+            <fieldset>
+                <legend> Dane osobowe </legend>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <strong>  @Html.DisplayNameFor(m => m.FirstName) </strong>
+                        @Model.FirstName
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <strong> @Html.DisplayNameFor(m => m.SecondName) </strong>
+                        @Model.SecondName
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <strong> @Html.DisplayNameFor(m => m.LastName) </strong>
+                        @Model.LastName
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.DateOfBirth) </strong>
+                        @Model.DateOfBirth
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.Pesel) </strong>
+                        @Model.Pesel
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.Email) </strong>
+                        @Model.Email
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.Phone) </strong>
+                        @Model.Phone
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.School) </strong>
+                        @Model.School
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.Group) </strong>
+                        @Model.Group
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+
+        <div class="tab-pane fade" id="PlaceOfResidence">
+            <fieldset id="PlaceOfResidence" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <legend> Miejsce zamieszkania </legend>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.PlaceOfResidence.town) </strong>
+                        @Model.PlaceOfResidence.town
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.PlaceOfResidence.zipCode) </strong>
+                        @Model.PlaceOfResidence.zipCode
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <strong> @Html.DisplayNameFor(m => m.PlaceOfResidence.street) </strong>
+                        @Model.PlaceOfResidence.street
+                    </div>
+                </div>
+            </fieldset>
+
+
+        </div>
+
+        <div class="tab-pane fade" id="domicile">
+
+            <fieldset id="domicile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <legend> Miejsce zameldowania </legend>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.Domicile.town) </strong>
+                        @Model.PlaceOfResidence.town
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <strong> @Html.DisplayNameFor(m => m.Domicile.zipCode) </strong>
+                        @Model.PlaceOfResidence.zipCode
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <strong> @Html.DisplayNameFor(m => m.Domicile.street) </strong>
+                        @Model.PlaceOfResidence.street
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="tab-pane fade" id="parents">
+            @foreach (var parent in Model.Parents) {
+                <fieldset id="parents">
+                    <legend> Rodzic lub opiekun prawny </legend>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <strong> @Html.DisplayNameFor(m => parent.firstName) </strong>
+                            @parent.firstName
+                        </div>
+
+                        <div class="col-sm-12 col-md-4">
+                            <strong> @Html.DisplayNameFor(m => parent.secondName) </strong>
+                            @parent.secondName
+                        </div>
+
+                        <div class="col-sm-12 col-md-4">
+                            <strong> @Html.DisplayNameFor(m => parent.lastName) </strong>
+                            @parent.lastName
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <strong> @Html.DisplayNameFor(m => parent.email) </strong>
+                            @parent.email
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <strong> @Html.DisplayNameFor(m => parent.phone) </strong>
+                            @parent.phone
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>

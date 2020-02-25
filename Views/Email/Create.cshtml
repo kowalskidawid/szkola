@@ -1,0 +1,96 @@
+﻿<h4> Wyślij email </h4>
+
+<div class="alert alert-danger d-none" role="alert" id="emptyRecipient">
+    Musisz wybrać conajmniej jednego odbiorcę!
+</div>
+<div class="alert alert-danger d-none" role="alert" id="emptyContent">
+    Wprowadź jakąś treść wiadomości.
+</div>
+
+<ul class="nav nav-tabs mb-3">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#emailTab"> Napisz wiadomość </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#recipientTab"> Wybierz odbiorcę </a>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade show active" id="emailTab">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="card border-secondary mb-3" style="overflow-y: auto;">
+                    <div class="card-header"> Wstaw dane odbiorcy w treść wiadomości </div>
+                    <div class="card-body">
+                        <input type="button" data-variableCode="[firstName/]" class="addVariable form-control" value="Imię" />
+                        <input type="button" data-variableCode="[secondName/]" class="addVariable form-control" value="Drugie imię" />
+                        <input type="button" data-variableCode="[lastName/]" class="addVariable form-control" value="Nazwisko" />
+
+                        <hr />
+
+                        <input type="button" data-variableCode="[class/]" class="addVariable form-control" value="Kalasa" />
+                        <input type="button" data-variableCode="[school/]" class="addVariable form-control" value="Szkoła" />
+
+                        <hr />
+
+                        <input type="button" data-variableCode="[placeOfResidence/]" class="addVariable form-control" value="Adres zamieszkania" />
+                        <input type="button" data-variableCode="[Domicile/]" class="addVariable form-control" value="Adres zameldowania" />
+                    </div>
+                </div>
+                <div class="card border-secondary">
+                    <div class="card-header"> Dodaj załącznik </div>
+                    <div class="card-body">
+                        <div class="file-field">
+                            <a class="btn-floating peach-gradient mt-0 float-left">
+                                <i class="fas fa-paperclip" aria-hidden="true"></i>
+                                <input type="file" multiple id="attachment">
+                            </a>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload your file">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <div class="mb-2">
+                    <label for="subject">
+                        Temat wiadomości
+                    </label>
+                    <input type="text" id="subject" class="form-control" />
+                </div>
+                <div>
+                    <label> Treść wiadomości </label>
+                    <div id="content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="recipientTab">
+        <h4> Wybierz odbiorcę </h4>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="card border-secondary mb-3" style="overflow-y: auto;">
+                    <div class="card-header"> Uczniowie </div>
+                    <div class="card-body" id="studentsList">  </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="card border-secondary mb-3" style="overflow-y: auto;">
+                    <div class="card-header"> Nauczyciele </div>
+                    <div class="card-body" id="teachersList">  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <input type="button" value="Wyślij wiadomość" class="btn btn-primary d-block mx-auto" id="sendEmail" />
+    </div>
+</div>
+
+
+<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+<script src="/js/Email/ckeditorConfig.js"></script>
+<script src="/js/Email/addVariables.js"></script>
+<script src="/js/Email/getRecipientList.js"></script>
+<script src="/js/Email/sendEmail.js"></script>

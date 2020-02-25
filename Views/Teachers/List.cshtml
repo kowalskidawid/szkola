@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TeacherModel>
+
+<h3> Dodane szkoły </h3>
+
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                Opcje
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.FirstName
+                </td>
+                <td>
+                    @item.SecondName
+                </td>
+                <td>
+                    @item.LastName
+                </td>
+                <td>
+                    <a href="/teachers/edit/@item._id"> Edytuj </a>
+                    <a href="/teachers/delete/@item._id"> Usuń </a>
+                    <a href="/teachers/details/@item._id"> Szczegóły </a>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+
+<div class="col-sm-12 col-md-12 text-right">
+    <a class="bg-success mr-2 py-1 px-2 text-light" href = "/teachers/create"> Dodaj </a>
+</div>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script src="/js/table.js"></script>

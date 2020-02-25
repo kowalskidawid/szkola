@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SchoolModel>
+
+<h3> Dodane szkoły </h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantityOfClass)
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.name
+                </td>
+                <td>
+                    @item.quantityOfClass
+                </td>
+            </tr>
+        </tbody>
+    }
+    </table>

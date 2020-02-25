@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SubjectModel>
+
+<h3> Dodane przedmioty </h3>
+
+<table class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.abbreviation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                Opcje
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @item.abbreviation
+                </td>
+                <td>
+                    @item.name
+                </td>
+                <td>
+                    <a href="/subjects/edit/@item._id"> Edytuj </a>
+                    <a href="/subjects/delete/@item._id"> Usuń </a>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+
+<div class="col-sm-12 col-md-12 text-right">
+    <a class="bg-success mr-2 py-1 px-2 text-light" asp-action = "create"> Dodaj </a>
+</div>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script src="/js/table.js"></script>

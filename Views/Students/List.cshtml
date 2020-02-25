@@ -1,0 +1,49 @@
+﻿@model IEnumerable<StudentsModel>
+
+<h3> Dodane szkoły </h3>
+
+<table class="display">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                Imię i nazwisko:
+            </th>
+            <th>
+                Szkoła:
+            </th>
+            <th>
+                Klasa:
+            </th>
+            <th> Opcje </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <th>
+                    <input type ="checkbox" data-id="@item._id" class="selectMany"/>
+                </th>
+                <td>
+                    @item.FirstName @item.SecondName @item.LastName
+                </td>
+                <td>
+                    @item.School
+                </td>
+                <td>
+                    Klasa: @item.Group
+                </td>
+                <td>
+                    <a href="/students/details/@item._id"> Szczegóły </a>
+                    <a href="/students/edit/@item._id"> Edytuj </a>
+                    <a href="/students/delete/@item._id"> Usuń </a>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script src="/js/table.js"></script>

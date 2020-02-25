@@ -1,0 +1,26 @@
+﻿@model SchoolModel
+<h4> Dodaj szkołę </h4>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-controller="Schools" asp-action="Create" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="name"></label>
+            <input asp-for="name" class="form-control" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="quantityOfClass"> </label>
+            <input asp-for="quantityOfClass" class="form-control" />
+            <span asp-validation-for="quantityOfClass" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row my-2">
+        <input type="submit" value="Zapisz" class="btn btn-primary d-block mx-auto" />
+    </div>
+</form>
+
+@Html.RenderPartialAsync("_ValidationScriptsPartial")

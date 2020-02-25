@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Szkoła.Models.StudentsModel>
+
+@foreach( var student in Model )
+{
+    <div class="row">
+        <label>
+            <input type = "checkbox" value="@student._id" />
+            @student.FirstName @student.SecondName @student.LastName
+         </label>
+    </div>
+}

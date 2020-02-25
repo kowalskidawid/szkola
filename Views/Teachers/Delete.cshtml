@@ -1,0 +1,64 @@
+﻿@model TeacherModel
+
+<h4> Dodaj nauczyciele </h4>
+<form asp-controller="Teachers" asp-action="Delete" method="post">
+    <input type ="hidden" asp-for="_id" />
+    <fieldset>
+        <legend> Dane osobowe </legend>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <label asp-for="SecondName"> </label>
+                <input asp-for="SecondName" class="form-control" />
+                <span asp-validation-for="SecondName" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <label asp-for="LastName"> </label>
+                <input type="text" asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <label asp-for="DateOfBirth"> </label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <label asp-for="Pesel"> </label>
+                <input asp-for="Pesel" class="form-control" />
+                <span asp-validation-for="Pesel" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <label asp-for="Email"> </label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <label asp-for="Phone"> </label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mx-auto my-1">
+            <div class="col-sm-12 col-md-4 offset-md-2">
+                <input type="button" value="Anuluj" class="btn btn-primary d-block mr-auto" />
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <input type="submit" value="Usuń" class="btn btn-danger d-block ml-auto" />
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,252 @@
+﻿@model StudentsModel
+
+<h4> Dodaj ucznia </h4>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-controller="Students" asp-action="Create" method="post">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#personalData"> Dane osobowe </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#PlaceOfResidence"> Miejsce zamieszkania </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#domicile"> Miejsce zameldowania </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#parents"> Rodzice  </a>
+        </li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="personalData">
+
+            <fieldset>
+                <legend> Dane osobowe </legend>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="SecondName"> </label>
+                        <input asp-for="SecondName" class="form-control" />
+                        <span asp-validation-for="SecondName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="LastName"> </label>
+                        <input type="text" asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="DateOfBirth"> </label>
+                        <input asp-for="DateOfBirth" class="form-control" />
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Pesel"> </label>
+                        <input asp-for="Pesel" class="form-control" />
+                        <span asp-validation-for="Pesel" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Email"> </label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Phone"> </label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="School"> Szkoła: </label>
+                        <select asp-for="School" class="form-control">
+                            <option disabled selected> Wybierz </option>
+                        </select>
+                        <span asp-validation-for="School" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Group"></label>
+                        <select asp-for="Group" class="form-control">
+                            <option disabled selected> Wybierz </option>
+                        </select>
+                        <span asp-validation-for="Group" class="text-danger"></span>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="tab-pane fade" id="PlaceOfResidence">
+            <fieldset id="PlaceOfResidence" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <legend> Miejsce zamieszkania </legend>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="PlaceOfResidence.town"> </label>
+                        <input asp-for="PlaceOfResidence.town" class="form-control" />
+                        <span asp-validation-for="PlaceOfResidence.town" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="PlaceOfResidence.zipCode"> </label>
+                        <input asp-for="PlaceOfResidence.zipCode" class="form-control" />
+                        <span asp-validation-for="PlaceOfResidence.zipCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <label asp-for="PlaceOfResidence.street"> </label>
+                        <input asp-for="PlaceOfResidence.street" class="form-control" />
+                        <span asp-validation-for="PlaceOfResidence.street" class="text-danger"></span>
+                    </div>
+                </div>
+            </fieldset>
+
+
+        </div>
+
+        <div class="tab-pane fade" id="domicile">
+            <fieldset>
+                <legend> Miejsce zameldowania </legend>
+                <div class="row my-1">
+                    <input type="button" value="Taki sam jak zamieszkania" id="copyAddress" class="btn btn-primary d-block ml-auto" />
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Domicile.town"> </label>
+                        <input asp-for="Domicile.town" class="form-control" />
+                        <span asp-validation-for="Domicile.town" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Domicile.zipCode"> </label>
+                        <input asp-for="Domicile.zipCode" class="form-control" />
+                        <span asp-validation-for="Domicile.zipCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <label asp-for="Domicile.street"> </label>
+                        <input asp-for="Domicile.street" class="form-control" />
+                        <span asp-validation-for="Domicile.street" class="text-danger"></span>
+                    </div>
+                </div>
+            </fieldset>
+
+
+        </div>
+
+        <div class="tab-pane fade" id="parents">
+            <fieldset id="parents">
+                <legend> Rodzic lub opiekun prawny </legend>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="Parents[0].firstName"></label>
+                        <input asp-for="Parents[0].firstName" class="form-control" />
+                        <span asp-validation-for="Parents[0].firstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="Parents[0].secondName"> </label>
+                        <input asp-for="Parents[0].secondName" class="form-control" />
+                        <span asp-validation-for="Parents[0].secondName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="Parents[0].lastName"> </label>
+                        <input type="text" asp-for="Parents[0].lastName" class="form-control" />
+                        <span asp-validation-for="Parents[0].lastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Parents[0].email"> </label>
+                        <input asp-for="Parents[0].email" class="form-control" />
+                        <span asp-validation-for="Parents[0].email" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Parents[0].phone"> </label>
+                        <input asp-for="Parents[0].phone" class="form-control" />
+                        <span asp-validation-for="Parents[0].phone" class="text-danger"></span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset id="secondParent" class="d-none">
+                <legend> Rodzic lub opiekun prawny </legend>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="Parents[1].firstName"></label>
+                        <input asp-for="Parents[1].firstName" class="form-control" />
+                        <span asp-validation-for="Parents[1].firstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="Parents[1].secondName"> </label>
+                        <input asp-for="Parents[1].secondName" class="form-control" />
+                        <span asp-validation-for="Parents[1].secondName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <label asp-for="Parents[1].lastName"> </label>
+                        <input type="text" asp-for="Parents[1].lastName" class="form-control" />
+                        <span asp-validation-for="Parents[1].lastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Parents[1].email"> </label>
+                        <input asp-for="Parents[1].email" class="form-control" />
+                        <span asp-validation-for="Parents[1].email" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <label asp-for="Parents[1].phone"> </label>
+                        <input asp-for="Parents[1].phone" class="form-control" />
+                        <span asp-validation-for="Parents[1].phone" class="text-danger"></span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="row my-1">
+                <input type="button" value="Dodaj rodzica" id="addParent" class="btn btn-primary d-block ml-auto" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-2">
+        <input type="submit" value="Zapisz" class="btn btn-primary d-block mx-auto" />
+    </div>
+</form>
+
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="/js/inputmask/jquery.mask.min.js"></script>
+<script src="/js/inputmask/InputMask.js"></script>
+
+<script src="/lib/datepicker/pl.js"></script>
+<script src="/lib/datepicker/datePicker.js"></script>
+<script src="/js/Students/copyAddress.js"></script>
+<script src="/js/Students/addParent.js"></script>
+<script src="/js/Students/setQuantityOfClass.js"></script>
+<script src="/js/Students/getSchools.js"></script>

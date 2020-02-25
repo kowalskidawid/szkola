@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="Views\Students\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Servies\" />
+    <Folder Include="Views\Schools\" />
+    <Folder Include="wwwroot\js\Students\" />
+    <Folder Include="Views\Teachers\" />
+    <Folder Include="wwwroot\lib\Tablesorter\" />
+    <Folder Include="wwwroot\lib\datepicker\" />
+    <Folder Include="wwwroot\js\inputmask\" />
+    <Folder Include="Views\Subjects\" />
+    <Folder Include="wwwroot\js\Teachers\" />
+    <Folder Include="Views\Shared\PDFTemplates\" />
+    <Folder Include="wwwroot\lib\jquery-ui\" />
+    <Folder Include="Views\Email\" />
+    <Folder Include="wwwroot\js\Email\" />
+    <Folder Include="Views\Shared\Students\" />
+    <Folder Include="Views\Shared\Teachers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Students\create.cshtml.cs" />
+    <Compile Remove="Views\Students\Index.cshtml.cs" />
+    <Compile Remove="Views\User\Login.cshtml.cs" />
+    <Compile Remove="Models\StudentsDatabaseSettingsModel.cs" />
+    <Compile Remove="Views\Schools\Create.cshtml.cs" />
+    <Compile Remove="Models\FileModel.cs" />
+    <Compile Remove="Models\IFormFile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Students\create.html" />
+    <None Remove="mono_crash.mem.6494.70000cb48000.blob" />
+    <None Remove="mono_crash.mem.6494.70000cf4e000.blob" />
+    <None Remove="mono_crash.mem.6494.111d32dc0.blob" />
+    <None Remove="mono_crash.mem.6494.70000d354000.blob" />
+    <None Remove="mono_crash.mem.6494.70000cd4b000.blob" />
+    <None Remove="mono_crash.mem.6494.70000c439000.blob" />
+    <None Remove="mono_crash.mem.6494.1.blob" />
+    <None Remove="plik.txt" />
+    <None Remove="cv.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Students\Index.cshtml" />
+    <Content Remove="mono_crash.42f6ec106.1.json" />
+    <Content Remove="mono_crash.42f6ec106.0.json" />
+    <Content Remove="mono_crash.42f6ec106.1.json" />
+    <Content Remove="mono_crash.42f6ec106.0.json" />
+    <Content Remove="Views\Teachers\NotFoundTeacher %28kopia%29.cshtml" />
+    <Content Remove="Views\Teachers\NotFoundTeacher %28kopia%29.cshtml" />
+    <Content Remove="Views\Teachers\NotFoundTeacher %28kopia%29.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.10.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.2" />
+    <PackageReference Include="MongoDB.Bson" Version="2.10.2" />
+    <PackageReference Include="IronPdf" Version="2020.1.0" />
+    <PackageReference Include="dropzone" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureStorage" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureKeyVault" Version="3.1.2" />
+    <PackageReference Include="CKSource.CKFinder" Version="3.5.1" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+  </ItemGroup>
+</Project>

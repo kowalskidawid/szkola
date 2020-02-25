@@ -1,0 +1,151 @@
+﻿@model signUpUserModel
+
+<h4>  Edytuj urzytkownika @Model.Login </h4>
+<form asp-controller="User" asp-action="Edit" method="post">
+    <input type ="hidden" asp-for="_id" />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="Login"> </label>
+            <input asp-for="Login" class="form-control" />
+            <small asp-validation-for="Login" class="text-danger"></small>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="Password"> </label>
+            <div class="input-group">
+                <input asp-for="Password" class="form-control" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+            </div>
+            <small asp-validation-for="Password" class="text-danger"></small>
+        </div>
+
+        <div class="col-sm-12 col-md-12">
+            <label asp-for="Email"> </label>
+            <input asp-for="Email" class="form-control" />
+            <small asp-validation-for="Email" class="text-danger"></small>
+        </div>
+    </div>
+
+    <fieldset>
+        <legend> Uprawnienia </legend>
+        <div class="row">
+            <div class="col-sm-12 col-md-3">
+                <div class="card border-primary text-center">
+                    <div class="card-header w-100"> Uczniowie: </div>
+                    <div class="card-body">
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="ReadStudents" asp-for="accessToStudents[0]" class="form-check-input" />
+                            <label for="ReadStudents" class="form-check-label"> Odczyt </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="EditStudents" asp-for="accessToStudents[1]" class="form-check-input" />
+                            <label for="EditStudents" class="form-check-label"> Edycja </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="CreateStudents" asp-for="accessToStudents[2]" class="form-check-input" />
+                            <label for="CreateStudents" class="form-check-label"> Dodawanie </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3">
+                <div class="card border-primary text-center">
+                    <div class="card-header w-100"> Nauczyciele: </div>
+                    <div class="card-body">
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="ReadStudents" asp-for="accessToTeachers[0]" class="form-check-input" />
+                            <label for="ReadTeachers" class="form-check-label"> Odczyt </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="EditStudents" asp-for="accessToTeachers[1]" class="form-check-input" />
+                            <label for="EditTeachers" class="form-check-label"> Edycja </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="CreateStudents" asp-for="accessToTeachers[2]" class="form-check-input" />
+                            <label for="CreateTeachers" class="form-check-label"> Dodawanie </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3">
+                <div class="card border-primary text-center">
+                    <div class="card-header w-100"> Przedmioty: </div>
+                    <div class="card-body">
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="ReadStudents" asp-for="accessToSubject[0]" class="form-check-input" />
+                            <label for="ReadSubjects" class="form-check-label"> Odczyt </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="EditStudents" asp-for="accessToSubject[1]" class="form-check-input" />
+                            <label for="ReadSubjects" class="form-check-label"> Edycja </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="CreateStudents" asp-for="accessToSubject[2]" class="form-check-input" />
+                            <label for="ReadSubjects" class="form-check-label"> Dodawanie </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3">
+                <div class="card border-primary text-center">
+                    <div class="card-header w-100"> Szkoły: </div>
+                    <div class="card-body">
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="ReadSchools" asp-for="accessToSchool[0]" class="form-check-input" />
+                            <label for="ReadSubjects" class="form-check-label"> Odczyt </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="EditSchools" asp-for="accessToSchool[1]" class="form-check-input" />
+                            <label for="EditSchools" class="form-check-label"> Edycja </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="CreateSchools" asp-for="accessToSchool[2]" class="form-check-input" />
+                            <label for="CreateSchools" class="form-check-label"> Dodawanie </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3">
+                <div class="card border-primary text-center">
+                    <div class="card-header w-100"> Urzytkownicy: </div>
+                    <div class="card-body">
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="ReadSchools" asp-for="accessToUsers[0]" class="form-check-input" />
+                            <label for="ReadSubjects" class="form-check-label"> Odczyt </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="EditSchools" asp-for="accessToUsers[1]" class="form-check-input" />
+                            <label for="EditSchools" class="form-check-label"> Edycja </label>
+                        </div>
+
+                        <div class="col-sm-12 col-md-12">
+                            <input type="checkbox" id="CreateSchools" asp-for="accessToUsers[2]" class="form-check-input" />
+                            <label for="CreateSchools" class="form-check-label"> Dodawanie </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="row my-2">
+        <input type="submit" value="Zapisz" class="btn btn-primary d-block mx-auto" />
+    </div>
+</form>
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

@@ -1,0 +1,27 @@
+﻿@model SubjectModel
+
+<h4> Dodaj przedmiot </h4>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Edit" asp-controller="Subjects" method="post">
+    <input type = "hidden" asp-for="_id" />
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="name"></label>
+            <input asp-for="name" class="form-control" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <label asp-for="abbreviation"> </label>
+            <input asp-for="abbreviation" class="form-control" />
+            <span asp-validation-for="abbreviation" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row my-1">
+        <input type="submit" value="Zapisz" class="btn btn-primary d-block mx-auto" />
+    </div>
+</form>
+
+@Html.RenderPartialAsync("_ValidationScriptsPartial")
