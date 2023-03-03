@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver.Core" Version="2.10.2" />
-    <PackageReference Include="MongoDB.Driver" Version="2.10.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
     <PackageReference Include="MongoDB.Bson" Version="2.10.2" />
     <PackageReference Include="IronPdf" Version="2020.1.0" />
     <PackageReference Include="dropzone" Version="4.3.0" />
